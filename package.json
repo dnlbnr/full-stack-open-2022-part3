@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-open-2022-part3",
+  "version": "1.0.0",
+  "description": "Exercises for part 3 of full stack open",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnlbnr/full-stack-open-2022-part3.git"
+  },
+  "author": "Daniel Benner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnlbnr/full-stack-open-2022-part3/issues"
+  },
+  "homepage": "https://github.com/dnlbnr/full-stack-open-2022-part3#readme"
+}
