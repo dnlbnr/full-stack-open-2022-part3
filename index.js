@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const PORT = 3001;
 let persons = [
   {
     id: 1,
@@ -84,4 +83,5 @@ app.get('/info', (request, response) => {
   response.status(200).send(htmlString);
 });
 
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
