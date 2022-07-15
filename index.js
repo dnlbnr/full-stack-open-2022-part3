@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const PORT = 3001;
 let persons = [
@@ -27,6 +28,7 @@ let persons = [
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 morgan.token('body', function (req, res) {
   return JSON.stringify(req.body);
@@ -72,7 +74,7 @@ app.post('/api/persons', (request, response) => {
   const id = Math.floor(Math.random() * 100000000);
   const newPerson = { id, name, number };
   persons.push(newPerson);
-  return response.status(200).send(`${newPerson.name} added to phonebook`);
+  return response.status(200).json(newPerson);
 });
 
 app.get('/info', (request, response) => {
