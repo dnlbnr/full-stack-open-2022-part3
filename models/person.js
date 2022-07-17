@@ -1,15 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI
 
 mongoose
   .connect(uri)
   .then(() => {
-    console.log('Connected to database');
+    console.log('Connected to database')
   })
   .catch((error) => {
-    console.log(`Error connecting to database: ${error.message}`);
-  });
+    console.log(`Error connecting to database: ${error.message}`)
+  })
 
 const personSchema = mongoose.Schema({
   name: {
@@ -25,14 +25,14 @@ const personSchema = mongoose.Schema({
       message: 'Incorrect format',
     },
   },
-});
+})
 
 personSchema.set('toJSON', {
   transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString();
-    delete returnedObject._id;
-    delete returnedObject.__v;
+    returnedObject.id = returnedObject._id.toString()
+    delete returnedObject._id
+    delete returnedObject.__v
   },
-});
+})
 
-module.exports = mongoose.model('Person', personSchema);
+module.exports = mongoose.model('Person', personSchema)
